@@ -10,6 +10,10 @@ contract TodoList {
     }
 
     mapping(uint => Task) tasks;
-    
+
+    function createTask(string memory _content) public {
+        taskCount++;
+        tasks[taskCount] = Task(taskCount, _content, false);
+    }
 }
 
